@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>note_1</title>
+    <script src="../../jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<p>0</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<input type="text" value="text" hidden>
+<input type="checkbox" checked><button id="test">test</button>
+<script>
+    $(document).ready(function () {
+        $('p:even').click(function () {
+            alert($(this).index());
+        });
+        $('p:odd').click(function () {
+            $('input:hidden').show(3000);
+            alert($(this).index());
+        });
+        $('p:eq(3)').html('hello');
+        $('p:lt(3)').html('before hello');
+        $('p:gt(3)').html('after hello');
+        $('#test').click(function () {
+            if($('input:eq(1)').prop('checked')){
+                $('input:eq(1)').prop('checked',false);
+            }else{
+                $('input:eq(1)').prop('checked',true)
+            }
+        });
+    });
+</script>
+</body>
+</html>
